@@ -1,0 +1,17 @@
+{
+  "name": "sdd-gentleai-linear",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "NODE_V8_COVERAGE=.coverage/v8 vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

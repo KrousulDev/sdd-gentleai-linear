@@ -203,6 +203,7 @@ Un developer inicia una feature nueva con SDD desde OpenCode. El plugin debe aco
 - El sistema valida que `verify = success`.
 - Se ejecuta commit y push.
 - El commit incluye dual-ID.
+- El estado canónico conserva una evidencia queryable del dual-ID aceptado.
 - `archive = done`.
 - Linear cambia a `Done`.
 
@@ -214,6 +215,7 @@ git commit -m "feat: close workflow (ENG-123 | sdd_001)"
 ```
 
 - El push termina sin error.
+- La evidencia persistida conserva `commitMessage`, `commitSha`, `pushed`, `expectedToken` y `assertedAt`.
 - El issue padre queda en `Done`.
 
 ---
@@ -284,6 +286,7 @@ El flujo se considera incorrecto si ocurre cualquiera de estas condiciones:
 - Linear entra en `Done` sin archive ejecutado.
 - El commit final no tiene dual-ID.
 - Se crean child issues sin confirmación del usuario.
+- Un contexto runtime parcial escribe en Engram o intenta espejar a Linear.
 - El plugin muta el workflow por fuera de las reglas del orquestador.
 - Engram y Linear quedan con IDs o stage inconsistentes.
 
